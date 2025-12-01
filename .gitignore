@@ -1,0 +1,11 @@
+# Ignorar entorno virtual (¡Muy importante!)
+venv/
+__pycache__/
+
+# Ignorar archivos temporales y de sistema
+*.DS_Store
+.vscode/
+
+# Opcional: Si el dataset fuera privado o muy pesado (+100MB), lo ignoraríamos.
+# Como es educativo y pequeño, puedes dejarlo, pero es buena práctica saberlo.
+# Data/
