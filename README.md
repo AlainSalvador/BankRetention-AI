@@ -11,7 +11,7 @@ A diferencia de los reportes estáticos tradicionales, esta herramienta permite 
 2.  **Predecir** la probabilidad de fuga de un cliente específico en tiempo real.
 3.  **Simular** estrategias de retención (ej. "¿Qué pasa si aumentamos la satisfacción o reducimos el número de productos?").
 
-## 💼 Contexto de Negocio (El Problema)
+## 💼 Contexto de Negocio
 Conseguir un cliente nuevo cuesta **5 veces más** que retener a uno existente. Los bancos pierden millones anualmente debido a fugas silenciosas que podrían prevenirse. Este proyecto utiliza datos históricos para detectar patrones complejos de comportamiento y alertar antes de que el cliente cierre su cuenta.
 
 ## 🚀 Características Clave
