@@ -79,21 +79,46 @@ with tab2:
 
     with st.sidebar:
         def user_input_features():
-            # Variables numéricas
-            credit_score = st.sidebar.slider('Puntaje de Crédito (Credit Score)', 300, 850, 600)
-            age = st.sidebar.slider('Edad', 18, 92, 40)
-            tenure = st.sidebar.slider('Tenencia (Años en el banco)', 0, 10, 3)
-            balance = st.sidebar.number_input('Saldo en Cuenta ($)', min_value=0.0, value=60000.0)
-            estimated_salary = st.sidebar.number_input('Salario Estimado ($)', min_value=0.0, value=50000.0)
-            num_of_products = st.sidebar.slider('Número de Productos', 1, 4, 2)
+            st.markdown("### Variables Numéricas")
+            
+            credit_score = st.sidebar.number_input(
+                'Puntaje de Crédito (300-850)', 
+                min_value=300, max_value=850, value=600, step=1
+            )
+            
+            age = st.sidebar.number_input(
+                'Edad', 
+                min_value=18, max_value=100, value=40, step=1
+            )
+            
+            tenure = st.sidebar.number_input(
+                'Años en el banco', 
+                min_value=0, max_value=10, value=3, step=1
+            )
+            
+            balance = st.sidebar.number_input(
+                'Saldo en Cuenta ($)', 
+                min_value=0.0, value=60000.0, step=1000.0
+            )
+            
+            estimated_salary = st.sidebar.number_input(
+                'Salario Estimado ($)', 
+                min_value=0.0, value=50000.0, step=1000.0
+            )
+            
+            num_of_products = st.sidebar.number_input(
+                'Número de Productos (1-4)', 
+                min_value=1, max_value=4, value=2, step=1
+            )
     
-            # Variables categóricas (Deben coincidir con las opciones del dataset original)
+            st.markdown("---") # Separador visual
+            st.markdown("### Variables Categóricas")
+
             geography = st.sidebar.selectbox('País', ('France', 'Germany', 'Spain'))
             gender = st.sidebar.selectbox('Género', ('Female', 'Male'))
             has_cr_card = st.sidebar.selectbox('¿Tiene Tarjeta de Crédito?', (1, 0), format_func=lambda x: 'Sí' if x == 1 else 'No')
             is_active_member = st.sidebar.selectbox('¿Es Miembro Activo?', (1, 0), format_func=lambda x: 'Sí' if x == 1 else 'No')
 
-            # Crear el DataFrame con los nombres EXACTOS de las columnas que usó el modelo
             data = {
                 'CreditScore': credit_score,
                 'Geography': geography,
